@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="starability-master/starability-css/starability-all.css"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper" id="side">
+      <!-- Sidebar -->
+      <aside id="sidebar">
+        <div class="sidebar-logo">
+          <a href="#">Product Manager</a>
+        </div>
+
+        <!-- Sidebar Navigation -->
+        <ul class="list-items">
+          <li class="sidebar-header">Tools & Components</li>
+
+          <li class="sidebar-item">
+            <a
+              href="#"
+              class="sidebar-link collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#pages"
+              aria-expanded="false"
+              aria-controls="pages"
+            >
+              <i class="fa-regular fa-file-lines pe-2"></i>
+              Pages
+            </a>
+            <ul
+              id="pages"
+              class="sidebar-dropdown list-unstyled collapse"
+              data-bs-parent="#sidebar"
+            >
+              <li class="sidebar-item">
+                <a href="manageTrip.html" class="sidebar-link">ManageTrips</a>
+              </li>
+              <li class="sidebar-item">
+                <a href="category.html" class="sidebar-link">Category</a>
+              </li>
+              <li class="sidebar-item">
+                <a href="orders.html" class="sidebar-link">Orders</a>
+              </li>
+              <li class="sidebar-item">
+                <a href="Users.html" class="sidebar-link">Users</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="sidebar-item">
+            <a
+              href="#"
+              class="sidebar-link collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#auth"
+              aria-expanded="false"
+              aria-controls="auth"
+            >
+              <i class="fa-regular fa-user pe-2"></i>
+              Auth
+            </a>
+            <ul
+              id="auth"
+              class="sidebar-dropdown list-unstyled collapse"
+              data-bs-parent="#sidebar"
+            >
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link">Login</a>
+              </li>
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link">Register</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </aside>
+    </div>
+
+    <nav
+      class="navbar d-flex navbar-expand px-2 border-bottom justify-content-between"
+    >
+      <!-- Button for sidebar toggle -->
+      <button class="sidebar-toggle-btn" id="sidebarToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <div class="utility px-3">
+        <span class="mx-3"
+          ><a href="register.html" class="btn text-white">Register</a></span
+        >
+        <span><a href="login.html" class="btn text-white">Login</a></span>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section d-flex align-items-center">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content text-center py-5">
+        <header>
+          <h1 class="display-3 fw-bold mb-3">Make a Trip</h1>
+        </header>
+        <main>
+          <p class="lead mb-4">
+            Plan your next adventure with ease! Explore breathtaking
+            destinations, create custom itineraries, and book your journey—all
+            in one place.
+          </p>
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a href="#" class="btn btn-primary btn-lg px-4">Start Planning</a>
+            <a href="#packages" class="btn btn-outline-light btn-lg px-4"
+              >Explore Trips</a
+            >
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <section class="module my-2 container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="widget">
+            <button class="btn filtering"><i class="fas fa-filter"></i></button>
+
+            <form action="">
+              <div class="search-box text-center">
+                <div class="d-flex justify-content-center gap-2">
+                  <input
+                    type="text"
+                    class="form-control pe-1 flex-1"
+                    placeholder="search..."
+                  />
+
+                  <button class="btn search-btn" type="submit">search</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!--search form end-->
+
+          <!--trip section start-->
+
+          <section class="trip-container mt-1" id="packages">
+            <div class="card-grid mt-3">
+              <!-- Card 1 -->
+
+              <div class="card card-1">
+                <div class="card-header">
+                  <img src="images/blog-1.jpg" alt="p-1" />
+                  <span class="date">2023/08/05</span>
+                </div>
+                <div class="card-body">
+                  <a href="detail.html" class="trip-title"
+                    >Awesome Trip Title</a
+                  >
+                  <div class="trip-info">
+                    <span class="category">Category: Adventure</span><br />
+                    <span class="price">Price: $499</span><br />
+                    <div class="infos d-flex justify-content-between">
+                      <span class="destination"
+                        ><i class="fa-solid fa-location-dot"></i> Paris</span
+                      ><br />
+                      <span class="duration"
+                        ><i class="fa-regular fa-clock"></i> 7 Days</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="utility d-flex justify-content-between align-items-center"
+                  >
+                    <div class="links">
+                      <a href="#" class="edit mx-1">Edit</a>|
+                      <a href="#" class="delete">Delete</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card card-1">
+                <div class="card-header">
+                  <img src="images/blog-1.jpg" alt="p-1" />
+                  <span class="date">2023/08/05</span>
+                </div>
+                <div class="card-body">
+                  <a href="detail.html" class="trip-title"
+                    >Awesome Trip Title</a
+                  >
+                  <div class="trip-info">
+                    <span class="category">Category: Adventure</span><br />
+                    <span class="price">Price: $499</span><br />
+                    <div class="infos d-flex justify-content-between">
+                      <span class="destination"
+                        ><i class="fa-solid fa-location-dot"></i> Paris</span
+                      ><br />
+                      <span class="duration"
+                        ><i class="fa-regular fa-clock"></i> 7 Days</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="utility d-flex justify-content-between align-items-center"
+                  >
+                    <div class="links">
+                      <a href="#" class="edit mx-1">Edit</a>|
+                      <a href="#" class="delete">Delete</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card card-1">
+                <div class="card-header">
+                  <img src="images/blog-1.jpg" alt="p-1" />
+                  <span class="date">2023/08/05</span>
+                </div>
+                <div class="card-body">
+                  <a href="detail.html" class="trip-title"
+                    >Awesome Trip Title</a
+                  >
+                  <div class="trip-info">
+                    <span class="category">Category: Adventure</span><br />
+                    <span class="price">Price: $499</span><br />
+                    <div class="infos d-flex justify-content-between">
+                      <span class="destination"
+                        ><i class="fa-solid fa-location-dot"></i> Paris</span
+                      ><br />
+                      <span class="duration"
+                        ><i class="fa-regular fa-clock"></i> 7 Days</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="utility d-flex justify-content-between align-items-center"
+                  >
+                    <div class="links">
+                      <a href="#" class="edit mx-1">Edit</a>|
+                      <a href="#" class="delete">Delete</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card card-1">
+                <div class="card-header">
+                  <img src="images/blog-1.jpg" alt="p-1" />
+                  <span class="date">2023/08/05</span>
+                </div>
+                <div class="card-body">
+                  <a href="detail.html" class="trip-title"
+                    >Awesome Trip Title</a
+                  >
+                  <div class="trip-info">
+                    <span class="category">Category: Adventure</span><br />
+                    <span class="price">Price: $499</span><br />
+                    <div class="infos d-flex justify-content-between">
+                      <span class="destination"
+                        ><i class="fa-solid fa-location-dot"></i> Paris</span
+                      ><br />
+                      <span class="duration"
+                        ><i class="fa-regular fa-clock"></i> 7 Days</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="utility d-flex justify-content-between align-items-center"
+                  >
+                    <div class="links">
+                      <a href="#" class="edit mx-1">Edit</a>|
+                      <a href="#" class="delete">Delete</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <!-- column-1 start -->
+
+      <!--search form start-->
+
+      <div class="mt-5 p-2 filter_page border">
+        <div class="sidebar">
+          <form action="" class="p-3">
+            <h6 class="form-header px-0">Category</h6>
+
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="categoryCheck1"
+              />
+              <label class="form-check-label" for="categoryCheck1">
+                Technology
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="categoryCheck2"
+              />
+              <label class="form-check-label" for="categoryCheck2">
+                Business
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="categoryCheck3"
+              />
+              <label class="form-check-label" for="categoryCheck3">
+                Marketing
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="categoryCheck4"
+              />
+              <label class="form-check-label" for="categoryCheck4">
+                Design
+              </label>
+            </div>
+
+            <!-- Divider -->
+            <hr class="divider" />
+
+            <!-- Duration Range Section -->
+            <div class="mb-3 range-container">
+              Min Duration<span class="range-value" id="duration_min"> 0</span>
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="100"
+                id="durationRange"
+                name="duration_min"
+                oninput="document.getElementById('duration_min').textContent = this.value"
+              />
+
+              Max Duration<span class="range-value" id="duration_max">
+                100</span
+              >
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="100"
+                id="durationRange"
+                name="duration_max"
+                oninput="document.getElementById('duration_max').textContent = this.value"
+              />
+            </div>
+
+            <!-- Price Range Section -->
+            <div class="mb-3 range-container">
+              Min Price<span class="range-value" id="priceValue_min">
+                ($):500</span
+              >
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="1000"
+                step="10"
+                id="priceRange"
+                name="price_min"
+                oninput="document.getElementById('priceValue_min').textContent = this.value"
+              />
+
+              Max Price<span class="range-value" id="priceValue_max">
+                ($):500</span
+              >
+
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="1000"
+                step="10"
+                id="priceRange"
+                name="price_max"
+                oninput="document.getElementById('priceValue_max').textContent = this.value"
+              />
+            </div>
+
+            <!-- Divider -->
+            <hr class="divider" />
+
+            <!-- Action Buttons Section -->
+            <div class="d-flex justify-content-between">
+              <button
+                type="button"
+                type="reset"
+                class="btn btn-outline-secondary btn-sm"
+              >
+                Reset
+              </button>
+              <button type="button" class="btn btn-primary btn-sm">
+                Apply Filter
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      let filter_btn = document.querySelector(".filtering");
+      let filter_page = document.querySelector(".filter_page");
+      console.log(filter_page);
+
+      filter_btn.addEventListener("click", () => {
+        filter_page.classList.toggle("filter_page-show");
+      });
+    </script>
+
+    <script src="bootstrap-5.3/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/src.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script> -->
+  </body>
+</html>

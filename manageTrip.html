@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>manageTrips</title>
+    <link rel="stylesheet" href="bootstrap-5.3/css/bootstrap.min.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container my-5">
+      <!-- tab menus -->
+
+      <!-- Tabbed View -->
+      <ul class="nav nav-tabs mt-1" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="trips-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#Trips"
+            type="button"
+            role="tab"
+            aria-controls="Trips"
+            aria-selected="true"
+          >
+            Trips
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="places-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#Places"
+            type="button"
+            role="tab"
+            aria-controls="Places"
+            aria-selected="false"
+          >
+            Places
+          </button>
+        </li>
+      </ul>
+
+      <!-- trip & places table start -->
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="Trips"
+          role="tabpanel"
+          aria-labelledby="overview-tab"
+        >
+          <!-- Add Trip a -->
+          <div class="mb-3">
+            <a type="a" class="btn btn-primary" href="addTrip.html"
+              >Add New Trip
+            </a>
+          </div>
+
+          <!-- Trip Table -->
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Destination</th>
+                <th>Duration</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Awesome Trip</td>
+                <td>Adventure</td>
+                <td>$499</td>
+                <td>Paris</td>
+                <td>7 Days</td>
+                <td>2023-08-05</td>
+                <td>
+                  <a class="btn btn-sm btn-warning" href="editTrip.html"
+                    >Edit</a
+                  >
+                  <a class="btn btn-sm btn-danger">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td>Relaxing Getaway</td>
+                <td>Relaxing</td>
+                <td>$399</td>
+                <td>Bali</td>
+                <td>5 Days</td>
+                <td>2023-08-10</td>
+                <td>
+                  <a class="btn btn-sm btn-warning">Edit</a>
+                  <a class="btn btn-sm btn-danger">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td>Family Fun</td>
+                <td>Family</td>
+                <td>$599</td>
+                <td>Disney World</td>
+                <td>6 Days</td>
+                <td>2023-08-15</td>
+                <td>
+                  <a class="btn btn-sm btn-warning">Edit</a>
+                  <a class="btn btn-sm btn-danger">Delete</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div
+          class="tab-pane fade show"
+          id="Places"
+          role="tabpanel"
+          aria-labelledby="overview-tab"
+        >
+          <!-- places table start-->
+          <section class="newPlaces mt-5">
+            <!-- Add Places -->
+            <div class="mb-3">
+              <a class="btn btn-primary" href="addPlaces.html"
+                >Add New Destination
+              </a>
+            </div>
+            <!-- Place Table -->
+            <table class="table table-striped table-hover border">
+              <thead>
+                <tr>
+                  <th>Destination places</th>
+                  <th>Description</th>
+                  <th>Image</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Place-1</td>
+                  <td>Adventure</td>
+                  <td>
+                    <img src="images/blog-1.jpg" class="table-img" alt="" />
+                  </td>
+
+                  <td>
+                    <a class="btn btn-sm btn-warning" href="editTrip.html"
+                      >Edit</a
+                    >
+                    <a class="btn btn-sm btn-danger">Delete</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Place-2</td>
+                  <td>Relaxing</td>
+                  <td>
+                    <img src="images/image2.jpg" class="table-img" alt="" />
+                  </td>
+
+                  <td>
+                    <a class="btn btn-sm btn-warning">Edit</a>
+                    <a class="btn btn-sm btn-danger">Delete</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Place-3</td>
+                  <td>Family</td>
+                  <td>
+                    <img src="images/nile.jfif" class="table-img" alt="" />
+                  </td>
+
+                  <td>
+                    <a class="btn btn-sm btn-warning">Edit</a>
+                    <a class="btn btn-sm btn-danger">Delete</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <!-- places table end-->
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="toast my-4 align-items-center position-absolute top-0 start-50 translate-middle"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+      data-bs-auto-hide="false"
+    >
+      <div class="d-flex">
+        <div class="toast-body">You have successfully added the Trip!!</div>
+        <button
+          type="button"
+          class="btn-close me-2 m-auto"
+          data-bs-dismiss="toast"
+          aria-label="Close"
+        ></button>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var toastElList = [].slice.call(document.querySelectorAll(".toast"));
+      var toastList = toastElList.map(function (toastEl) {
+        return new bootstrap.Toast(
+          toastEl,
+          '[data-bs-auto-hide="false"]'
+        ).show();
+      });
+    </script>
+  </body>
+</html>

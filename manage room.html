@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manager Dashboard - Sunrise Hotel</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="starability-master/starability-css/starability-all.css"
+    />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <!-- Header Section -->
+    <header class="bg-dark tops text-white text-center py-4">
+      <h1>
+        <a
+          href=""
+          class="link-light"
+          style="text-decoration: none; font-size: 0.8em"
+        >
+        </a>
+        Manager Dashboard
+      </h1>
+      <p class="lead manage">Manage Room Details</p>
+    </header>
+
+    <!-- Main Content -->
+    <section class="container my-5">
+      <!-- Rooms Table -->
+      <div class="d-flex justify-content-between">
+        <h2 class="mb-4">Room List</h2>
+        <button
+          class="btn btn-sm btn-success mb-4 py-1"
+          data-bs-target="#addRoomModal"
+          data-bs-toggle="modal"
+          class="toggle-modal-btn"
+        >
+          Add Room
+        </button>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th>Room Type</th>
+              <th>Price ($)</th>
+              <th>Capacity</th>
+              <th>Available</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="roomTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Add Room modal -->
+    <div
+      class="modal fade"
+      id="addRoomModal"
+      tabindex="-1"
+      aria-labelledby="addRoomModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="mb-1">Add New Room</h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <form
+              action=""
+              id="addRoomForm"
+              class="row g-3 p-3 bg-light rounded"
+              method="POST"
+              enctype="multipart/form-data"
+            >
+              <div class="col-md-6">
+                <label for="roomType" class="form-label">Room Type</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="type"
+                  placeholder="e.g., Deluxe Room"
+                />
+                <input
+                  type="text"
+                  name="hotel_id"
+                  class="form-control"
+                  value=""
+                  hidden
+                />
+                <span class="text text-danger error-display"></span>
+              </div>
+              <div class="col-md-6">
+                <label for="price" class="form-label"
+                  >Price per Night ($)</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  name="price"
+                  min="0"
+                  step="15"
+                  placeholder="e.g., 150.00"
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label for="capacity" class="form-label"
+                  >Capacity (Guests)</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  name="capacity"
+                  min="1"
+                  placeholder="e.g., 2"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="pics" class="form-label">Image</label>
+                <input
+                  type="file"
+                  class="form-control"
+                  name="pics"
+                  id="pics"
+                  placeholder="Drag a photo"
+                />
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="addDescription" class="form-label"
+                    >Description</label
+                  >
+                  <textarea
+                    class="form-control"
+                    name="description"
+                    rows="4"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="status"
+                    value="available"
+                    checked
+                  />
+                  <label class="form-check-label" for="status"
+                    >Available
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <button
+                  type="submit"
+                  class="btn btn-sm btn-primary add-room-btn"
+                >
+                  + Add Room
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Room Modal -->
+    <div
+      class="modal fade"
+      id="editRoomModal"
+      tabindex="-1"
+      aria-labelledby="editRoomModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editRoomModalLabel">Edit Room</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <form id="editRoomForm">
+              <input type="hidden" id="editRoomId" name="roomId" />
+              <div class="mb-3">
+                <label for="editRoomType" class="form-label">Room Type</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="editRoomType"
+                  name="roomType"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="editPrice" class="form-label"
+                  >Price per Night ($)</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="editPrice"
+                  name="price"
+                  min="0"
+                  step="0.01"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="editCapacity" class="form-label"
+                  >Capacity (Guests)</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="editCapacity"
+                  name="capacity"
+                  min="1"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="editAmenities" class="form-label">Amenities</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="editAmenities"
+                  name="amenities"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="editAvailable"
+                    name="available"
+                  />
+                  <label class="form-check-label" for="editAvailable"
+                    >Available</label
+                  >
+                </div>
+              </div>
+              <button type="submit" class="btn btn-book">Save Changes</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div
+      class="modal fade"
+      id="deleteRoomModal"
+      tabindex="-1"
+      aria-labelledby="deleteRoomModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteRoomModalLabel">
+              Confirm Deletion
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to delete this room?
+            <form
+              action="/hotel/{{$data->id}}/delete/room"
+              method="post"
+              id="deleteRoomForm"
+            >
+              @csrf @method('DELETE')
+              <input type="text" name="room_id" id="deleteRoomId" hidden />
+              <button
+                type="submit"
+                class="btn btn-danger"
+                id="confirmDeleteBtn"
+              >
+                Delete
+              </button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="successMessageModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteRoomModalLabel">
+              Successfully Added
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            You have added room successfully!!
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+  </body>
+</html>

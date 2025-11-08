@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Trip Reservations</title>
+    <link rel="stylesheet" href="../bootstrap-5.3/css/bootstrap.min.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    /> -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="text-center my-5">
+        <h1 class="display-4">My Reservations</h1>
+        <p class="lead">A timeline of your upcoming and past hotel stays.</p>
+      </div>
+
+      <div class="timeline">
+        <!-- Upcoming Reservation -->
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <i class="bi bi-airplane-fill"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h4 class="hotel-name mb-0">Grand Hyatt, New York</h4>
+              <span
+                class="badge bg-success-subtle text-success-emphasis rounded-pill status-badge"
+                >Upcoming</span
+              >
+            </div>
+            <p class="reservation-date text-muted">September 10-15, 2025</p>
+            <hr />
+            <ul class="details-list">
+              <li>
+                <i class="bi bi-geo-alt-fill"></i> 109 East 42nd Street, New
+                York, NY 10017
+              </li>
+              <li><i class="bi bi-door-open-fill"></i> King Room, City View</li>
+              <li><i class="bi bi-people-fill"></i> 2 Adults, 1 Child</li>
+            </ul>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <a
+                class="btn btn-outline-primary btn-sm"
+                href="manageReser(user).html"
+                type="button"
+              >
+                Manage Reservation
+              </a>
+              <button class="btn btn-outline-secondary btn-sm" type="button">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming Reservation -->
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <i class="bi bi-briefcase-fill"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h4 class="hotel-name mb-0">The Westin, Paris</h4>
+              <span
+                class="badge bg-success-subtle text-success-emphasis rounded-pill status-badge"
+                >Upcoming</span
+              >
+            </div>
+            <p class="reservation-date text-muted">October 20-25, 2025</p>
+            <hr />
+            <ul class="details-list">
+              <li>
+                <i class="bi bi-geo-alt-fill"></i> 3 Rue de Castiglione, 75001
+                Paris, France
+              </li>
+              <li><i class="bi bi-door-open-fill"></i> Deluxe Suite</li>
+              <li><i class="bi bi-people-fill"></i> 2 Adults</li>
+            </ul>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button class="btn btn-outline-primary btn-sm" type="button">
+                Manage Reservation
+              </button>
+              <button class="btn btn-outline-secondary btn-sm" type="button">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Past Reservation -->
+        <div class="timeline-item past-reservation">
+          <div class="timeline-icon">
+            <i class="bi bi-check-lg"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h4 class="hotel-name mb-0">Four Seasons, Tokyo</h4>
+              <span
+                class="badge bg-secondary-subtle text-secondary-emphasis rounded-pill status-badge"
+                >Completed</span
+              >
+            </div>
+            <p class="reservation-date text-muted">June 5-12, 2025</p>
+            <hr />
+            <ul class="details-list">
+              <li>
+                <i class="bi bi-geo-alt-fill"></i> 1-11-1 Marunouchi,
+                Chiyoda-ku, Tokyo 100-6277, Japan
+              </li>
+              <li><i class="bi bi-door-open-fill"></i> Standard Queen Room</li>
+              <li><i class="bi bi-people-fill"></i> 1 Adult</li>
+            </ul>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button class="btn btn-outline-secondary btn-sm" type="button">
+                Leave a Review
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Past Reservation -->
+        <div class="timeline-item past-reservation">
+          <div class="timeline-icon">
+            <i class="bi bi-check-lg"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h4 class="hotel-name mb-0">Four Seasons, Tokyo</h4>
+              <span
+                class="badge bg-secondary-subtle text-secondary-emphasis rounded-pill status-badge"
+                >Completed</span
+              >
+            </div>
+            <p class="reservation-date text-muted">June 5-12, 2025</p>
+            <hr />
+            <ul class="details-list">
+              <li>
+                <i class="bi bi-geo-alt-fill"></i> 1-11-1 Marunouchi,
+                Chiyoda-ku, Tokyo 100-6277, Japan
+              </li>
+              <li><i class="bi bi-door-open-fill"></i> Standard Queen Room</li>
+              <li><i class="bi bi-people-fill"></i> 1 Adult</li>
+            </ul>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button class="btn btn-outline-secondary btn-sm" type="button">
+                Leave a Review
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Past Reservation -->
+        <div class="timeline-item past-reservation">
+          <div class="timeline-icon">
+            <i class="bi bi-check-lg"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h4 class="hotel-name mb-0">Four Seasons, Tokyo</h4>
+              <span
+                class="badge bg-secondary-subtle text-secondary-emphasis rounded-pill status-badge"
+                >Completed</span
+              >
+            </div>
+            <p class="reservation-date text-muted">June 5-12, 2025</p>
+            <hr />
+            <ul class="details-list">
+              <li>
+                <i class="bi bi-geo-alt-fill"></i> 1-11-1 Marunouchi,
+                Chiyoda-ku, Tokyo 100-6277, Japan
+              </li>
+              <li><i class="bi bi-door-open-fill"></i> Standard Queen Room</li>
+              <li><i class="bi bi-people-fill"></i> 1 Adult</li>
+            </ul>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button class="btn btn-outline-secondary btn-sm" type="button">
+                Leave a Review
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
